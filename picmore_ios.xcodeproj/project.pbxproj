@@ -7,18 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3FEE999824A5A48FBDC2C25 /* Pods_picmore_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF579FBA7DEF7D75BDB10E5 /* Pods_picmore_ios.framework */; };
 		A5CB90E62896CF3600868D29 /* picmore_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB90E52896CF3600868D29 /* picmore_iosApp.swift */; };
-		A5CB90E82896CF3600868D29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB90E72896CF3600868D29 /* ContentView.swift */; };
 		A5CB90EA2896CF3800868D29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CB90E92896CF3800868D29 /* Assets.xcassets */; };
 		A5CB90ED2896CF3800868D29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CB90EC2896CF3800868D29 /* Preview Assets.xcassets */; };
+		A5CB90FE2896D58600868D29 /* unsplash_image.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB90FD2896D58600868D29 /* unsplash_image.swift */; };
+		A5CB91002896D7A300868D29 /* images_page.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB90FF2896D7A300868D29 /* images_page.swift */; };
+		A5CB91022896D7B100868D29 /* images_view_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB91012896D7B100868D29 /* images_view_model.swift */; };
+		A5CB91042896D8D500868D29 /* images_repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB91032896D8D500868D29 /* images_repository.swift */; };
+		A5CB91072896D91E00868D29 /* images_repository_impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB91062896D91E00868D29 /* images_repository_impl.swift */; };
+		A5CB910C289702FF00868D29 /* images_interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB910B289702FF00868D29 /* images_interactor.swift */; };
+		A5CB910F289703AE00868D29 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB910E289703AE00868D29 /* ServiceFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0572886D450E49EE15DF76F1 /* Pods-picmore_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-picmore_ios.release.xcconfig"; path = "Target Support Files/Pods-picmore_ios/Pods-picmore_ios.release.xcconfig"; sourceTree = "<group>"; };
+		7FF579FBA7DEF7D75BDB10E5 /* Pods_picmore_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_picmore_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB90E22896CF3600868D29 /* picmore_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = picmore_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB90E52896CF3600868D29 /* picmore_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picmore_iosApp.swift; sourceTree = "<group>"; };
-		A5CB90E72896CF3600868D29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A5CB90E92896CF3800868D29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5CB90EC2896CF3800868D29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A5CB90FD2896D58600868D29 /* unsplash_image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplash_image.swift; sourceTree = "<group>"; };
+		A5CB90FF2896D7A300868D29 /* images_page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = images_page.swift; sourceTree = "<group>"; };
+		A5CB91012896D7B100868D29 /* images_view_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = images_view_model.swift; sourceTree = "<group>"; };
+		A5CB91032896D8D500868D29 /* images_repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = images_repository.swift; sourceTree = "<group>"; };
+		A5CB91062896D91E00868D29 /* images_repository_impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = images_repository_impl.swift; sourceTree = "<group>"; };
+		A5CB910B289702FF00868D29 /* images_interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = images_interactor.swift; sourceTree = "<group>"; };
+		A5CB910E289703AE00868D29 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		DDA7FA1EC7A3373C8F39A2CD /* Pods-picmore_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-picmore_ios.debug.xcconfig"; path = "Target Support Files/Pods-picmore_ios/Pods-picmore_ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +42,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FEE999824A5A48FBDC2C25 /* Pods_picmore_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AAB6DA1B412556210CB9A6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDA7FA1EC7A3373C8F39A2CD /* Pods-picmore_ios.debug.xcconfig */,
+				0572886D450E49EE15DF76F1 /* Pods-picmore_ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A5CB90D92896CF3600868D29 = {
 			isa = PBXGroup;
 			children = (
 				A5CB90E42896CF3600868D29 /* picmore_ios */,
 				A5CB90E32896CF3600868D29 /* Products */,
+				0AAB6DA1B412556210CB9A6C /* Pods */,
+				D22BE5B0FE25479B77303FDA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +79,11 @@
 		A5CB90E42896CF3600868D29 /* picmore_ios */ = {
 			isa = PBXGroup;
 			children = (
-				A5CB90E52896CF3600868D29 /* picmore_iosApp.swift */,
-				A5CB90E72896CF3600868D29 /* ContentView.swift */,
+				A5CB90F62896D51600868D29 /* app */,
+				A5CB90FB2896D57100868D29 /* common */,
+				A5CB90F52896D50500868D29 /* remote_services */,
+				A5CB90F42896D4C300868D29 /* domain */,
+				A5CB90F32896D4BB00868D29 /* ui */,
 				A5CB90E92896CF3800868D29 /* Assets.xcassets */,
 				A5CB90EB2896CF3800868D29 /* Preview Content */,
 			);
@@ -67,6 +98,97 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A5CB90F32896D4BB00868D29 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB90F82896D53A00868D29 /* image_details */,
+				A5CB90F72896D52500868D29 /* images */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		A5CB90F42896D4C300868D29 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB91032896D8D500868D29 /* images_repository.swift */,
+				A5CB910B289702FF00868D29 /* images_interactor.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		A5CB90F52896D50500868D29 /* remote_services */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB91052896D90700868D29 /* repository */,
+			);
+			path = remote_services;
+			sourceTree = "<group>";
+		};
+		A5CB90F62896D51600868D29 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB910D289703A700868D29 /* di */,
+				A5CB90E52896CF3600868D29 /* picmore_iosApp.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		A5CB90F72896D52500868D29 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB90FF2896D7A300868D29 /* images_page.swift */,
+				A5CB91012896D7B100868D29 /* images_view_model.swift */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		A5CB90F82896D53A00868D29 /* image_details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = image_details;
+			sourceTree = "<group>";
+		};
+		A5CB90FB2896D57100868D29 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB90FC2896D57600868D29 /* models */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		A5CB90FC2896D57600868D29 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB90FD2896D58600868D29 /* unsplash_image.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		A5CB91052896D90700868D29 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB91062896D91E00868D29 /* images_repository_impl.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		A5CB910D289703A700868D29 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB910E289703AE00868D29 /* ServiceFactory.swift */,
+			);
+			path = di;
+			sourceTree = "<group>";
+		};
+		D22BE5B0FE25479B77303FDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FF579FBA7DEF7D75BDB10E5 /* Pods_picmore_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5CB90F02896CF3800868D29 /* Build configuration list for PBXNativeTarget "picmore_ios" */;
 			buildPhases = (
+				D0C87AE118095B33179D70D8 /* [CP] Check Pods Manifest.lock */,
 				A5CB90DE2896CF3600868D29 /* Sources */,
 				A5CB90DF2896CF3600868D29 /* Frameworks */,
 				A5CB90E02896CF3600868D29 /* Resources */,
+				F358C5BA83CE7B556B1B71F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +256,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D0C87AE118095B33179D70D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-picmore_ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F358C5BA83CE7B556B1B71F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-picmore_ios/Pods-picmore_ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-picmore_ios/Pods-picmore_ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-picmore_ios/Pods-picmore_ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5CB90DE2896CF3600868D29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5CB90E82896CF3600868D29 /* ContentView.swift in Sources */,
 				A5CB90E62896CF3600868D29 /* picmore_iosApp.swift in Sources */,
+				A5CB91002896D7A300868D29 /* images_page.swift in Sources */,
+				A5CB910C289702FF00868D29 /* images_interactor.swift in Sources */,
+				A5CB91022896D7B100868D29 /* images_view_model.swift in Sources */,
+				A5CB91042896D8D500868D29 /* images_repository.swift in Sources */,
+				A5CB910F289703AE00868D29 /* ServiceFactory.swift in Sources */,
+				A5CB90FE2896D58600868D29 /* unsplash_image.swift in Sources */,
+				A5CB91072896D91E00868D29 /* images_repository_impl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +435,7 @@
 		};
 		A5CB90F12896CF3800868D29 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDA7FA1EC7A3373C8F39A2CD /* Pods-picmore_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,6 +465,7 @@
 		};
 		A5CB90F22896CF3800868D29 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0572886D450E49EE15DF76F1 /* Pods-picmore_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

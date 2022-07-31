@@ -11,7 +11,7 @@ import SwiftUI
 struct picmore_iosApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ImagesPageView(viewModel: ImagesViewModel())
         }
     }
 }
