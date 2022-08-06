@@ -6,19 +6,24 @@
 //
 
 import Foundation
-
 import SwiftUI
 
-struct ImagesPageView: View {
-    // MARK: Properties
-    @ObservedObject var viewModel: ImagesViewModel
-    
-    // MARK: -Init
-    init(viewModel: ImagesViewModel) {
-        self.viewModel = viewModel
-    }
+struct ImagesPage: View {
+    @ObservedObject var viewModel: ListViewModel
     
     var body: some View {
-        Text("Hello.")
+        InfiniteList(data: $viewModel.images,
+                     isLoading: $viewModel.isLoading,
+                     isError: $viewModel.isError,
+                     loadingView: ProgressView(),
+                     loadMore: viewModel.loadMore
+        ) { image in
+            NavigationLink {
+                ImageDetails(image: image)
+            } label: {
+                ListItem(image: image)
+            }
+
+        }
     }
 }

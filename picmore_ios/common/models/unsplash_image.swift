@@ -7,21 +7,29 @@
 
 import Foundation
 
-struct UnsplashImage: Codable {
+struct UnsplashImage: Codable, Hashable {
+    static func == (lhs: UnsplashImage, rhs: UnsplashImage) -> Bool {
+      lhs.id == rhs.id
+    }
+    
     let id: String
     let likes: Int
     let urls: Urls
-    let user: User
+    let user: User?
 }
 
-struct Urls: Codable {
+struct Urls: Codable, Hashable {
     let raw: String
 }
 
-struct User: Codable {
+struct User: Codable, Hashable {
+    static func == (lhs: User, rhs: User) -> Bool {
+        lhs.bio == rhs.bio
+    }
+    
     let username: String
-    let bio: String
-    let profileImageUrls: ProfileImageUrls
+    let bio: String?
+    let profileImageUrls: ProfileImageUrls?
 
     enum CodingKeys: String, CodingKey {
         case profileImageUrls = "profile_image"
@@ -30,6 +38,10 @@ struct User: Codable {
     }
 }
 
-struct ProfileImageUrls: Codable {
+struct ProfileImageUrls: Codable, Hashable {
     let small: String
+    
+    static func == (lhs: ProfileImageUrls, rhs: ProfileImageUrls) -> Bool {
+        lhs.small == rhs.small
+    }
 }

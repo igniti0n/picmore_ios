@@ -4,45 +4,51 @@
 //
 //  Created by Ivan Stajcer on 31.07.2022..
 //
-
 import Foundation
+import SwiftUI
 
-enum ImagesPageState {
-    case loading
-    case loaded
-    case error
-}
-
-final class ImagesViewModel: ObservableObject {
+class ListViewModel: ObservableObject {
     // MARK: - Properties
-    @Published var state: ImagesPageState = .loading
-    let imagesInteractor: ImagesInteractor
-    
-    // MARK: - Init
-    init() {
-        self.imagesInteractor = ServiceFactory.imagesInteractor
-        fetchImages(for: 0)
-    }
+    @Published var images = [UnsplashImage]()
+    @Published var isLoading = false
+    @Published var isError = false
+    private var page = 1
+    private let imagesRepository: ImagesRepository = ImagesRepositoryImpl()
 }
 
 // MARK: - Public methods
-extension ImagesViewModel {
-    func fetchImages(for page: Int) {
-        do {
-            Task {
-                let images = try await imagesInteractor.fetchImages(for: page)
-                print("Got images!, \(images)")
+extension ListViewModel {
+    func loadMore() {
+        guard !isLoading else { return }
+        isLoading = true
+        Task {
+            do {
+                let newImages = try await imagesRepository.fetchImages(for: page)
+                showLoaded(with: newImages)
+            } catch(let error) {
+                showError()
+                print("Error fetching images: \(error)")
             }
-        } catch(let error) {
-            state = .error
-            print("Error!, \(error)")
         }
-      
     }
 }
 
 // MARK: - Private methods
-private extension ImagesViewModel {
+private extension ListViewModel {
+    func showError() {
+        DispatchQueue.main.async { [weak self] in
+            self?.isError = false
+            self?.isLoading = false
+        }
+    }
     
+    func showLoaded(with newImages: [UnsplashImage]) {
+        DispatchQueue.main.async { [weak self] in
+            self?.page += 1
+            self?.images.append(contentsOf: newImages)
+            self?.isError = true
+            self?.isLoading = false
+        }
+    }
 }
 
