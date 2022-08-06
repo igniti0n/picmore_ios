@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B29730F289DB346007CADA7 /* infinite_list.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29730E289DB346007CADA7 /* infinite_list.swift */; };
+		1B297311289DBF62007CADA7 /* list_item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297310289DBF62007CADA7 /* list_item.swift */; };
+		1B297313289DC1C6007CADA7 /* image_details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297312289DC1C6007CADA7 /* image_details.swift */; };
+		1B297315289DC1D3007CADA7 /* images_loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297314289DC1D3007CADA7 /* images_loader.swift */; };
 		A3FEE999824A5A48FBDC2C25 /* Pods_picmore_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF579FBA7DEF7D75BDB10E5 /* Pods_picmore_ios.framework */; };
 		A5CB90E62896CF3600868D29 /* picmore_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB90E52896CF3600868D29 /* picmore_iosApp.swift */; };
 		A5CB90EA2896CF3800868D29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CB90E92896CF3800868D29 /* Assets.xcassets */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		0572886D450E49EE15DF76F1 /* Pods-picmore_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-picmore_ios.release.xcconfig"; path = "Target Support Files/Pods-picmore_ios/Pods-picmore_ios.release.xcconfig"; sourceTree = "<group>"; };
+		1B29730E289DB346007CADA7 /* infinite_list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infinite_list.swift; sourceTree = "<group>"; };
+		1B297310289DBF62007CADA7 /* list_item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = list_item.swift; sourceTree = "<group>"; };
+		1B297312289DC1C6007CADA7 /* image_details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_details.swift; sourceTree = "<group>"; };
+		1B297314289DC1D3007CADA7 /* images_loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = images_loader.swift; sourceTree = "<group>"; };
 		7FF579FBA7DEF7D75BDB10E5 /* Pods_picmore_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_picmore_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB90E22896CF3600868D29 /* picmore_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = picmore_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB90E52896CF3600868D29 /* picmore_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picmore_iosApp.swift; sourceTree = "<group>"; };
@@ -56,6 +64,14 @@
 				0572886D450E49EE15DF76F1 /* Pods-picmore_ios.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		1B29730D289DB32C007CADA7 /* image_details */ = {
+			isa = PBXGroup;
+			children = (
+				1B297312289DC1C6007CADA7 /* image_details.swift */,
+			);
+			path = image_details;
 			sourceTree = "<group>";
 		};
 		A5CB90D92896CF3600868D29 = {
@@ -101,7 +117,7 @@
 		A5CB90F32896D4BB00868D29 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				A5CB90F82896D53A00868D29 /* image_details */,
+				1B29730D289DB32C007CADA7 /* image_details */,
 				A5CB90F72896D52500868D29 /* images */,
 			);
 			path = ui;
@@ -138,15 +154,11 @@
 			children = (
 				A5CB90FF2896D7A300868D29 /* images_page.swift */,
 				A5CB91012896D7B100868D29 /* images_view_model.swift */,
+				1B29730E289DB346007CADA7 /* infinite_list.swift */,
+				1B297310289DBF62007CADA7 /* list_item.swift */,
+				1B297314289DC1D3007CADA7 /* images_loader.swift */,
 			);
 			path = images;
-			sourceTree = "<group>";
-		};
-		A5CB90F82896D53A00868D29 /* image_details */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = image_details;
 			sourceTree = "<group>";
 		};
 		A5CB90FB2896D57100868D29 /* common */ = {
@@ -308,8 +320,12 @@
 				A5CB910C289702FF00868D29 /* images_interactor.swift in Sources */,
 				A5CB91022896D7B100868D29 /* images_view_model.swift in Sources */,
 				A5CB91042896D8D500868D29 /* images_repository.swift in Sources */,
+				1B29730F289DB346007CADA7 /* infinite_list.swift in Sources */,
+				1B297315289DC1D3007CADA7 /* images_loader.swift in Sources */,
 				A5CB910F289703AE00868D29 /* ServiceFactory.swift in Sources */,
+				1B297313289DC1C6007CADA7 /* image_details.swift in Sources */,
 				A5CB90FE2896D58600868D29 /* unsplash_image.swift in Sources */,
+				1B297311289DBF62007CADA7 /* list_item.swift in Sources */,
 				A5CB91072896D91E00868D29 /* images_repository_impl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
