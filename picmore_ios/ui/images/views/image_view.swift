@@ -1,26 +1,17 @@
 //
-//  list_item.swift
+//  image_view.swift
 //  picmore_ios
 //
-//  Created by istajcer on 05.08.2022..
+//  Created by istajcer on 06.08.2022..
 //
 
+import Foundation
 import SwiftUI
-import Alamofire
-
-struct ListItem: View {
-    var onItemTapped: (() -> Void)?
-    let image: UnsplashImage
-    
-    var body: some View {
-        ImageView.list(with: image.urls.raw)
-    }
-}
 
 struct ImageView: View {
     // MARK: - Properties
     @ObservedObject var imageLoader: ImageLoader
-    @State var image:UIImage = UIImage()
+    @State var image: UIImage = UIImage()
     let height: Double
     let width: Double
     let cornerRadius: Double
@@ -57,4 +48,3 @@ struct ImageView: View {
                 }
     }
 }
-

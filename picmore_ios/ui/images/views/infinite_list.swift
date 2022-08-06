@@ -16,7 +16,9 @@ where Data: RandomAccessCollection, Data.Element: Hashable, Content: View, Loadi
     let loadingView: LoadingView
     let loadMore: () -> Void
     let content: (Data.Element) -> Content
-        
+    let myColor = Color(#colorLiteral(red: 1, green: 0.7568627451, blue: 0.2, alpha: 1))
+    let blueColor = Color(#colorLiteral(red: 0, green: 0.337254902, blue: 0.4352941176, alpha: 1))
+
     // MARK: - Init
     public init(data: Binding<Data>,
          isLoading: Binding<Bool>,
@@ -36,14 +38,16 @@ where Data: RandomAccessCollection, Data.Element: Hashable, Content: View, Loadi
     public var body: some View {
             List {
                 listItems
-            }.onAppear(perform: loadMore)
-            .listStyle(PlainListStyle())
+            }
+            .onAppear(perform: loadMore)
+            .listStyle(GroupedListStyle())
     }
     
     private var listItems: some View {
         Group {
             ForEach(data, id: \.self) { item in
                 content(item)
+                    .listRowBackground(myColor)
                     .onAppear {
                         if item == data.last {
                             loadMore()

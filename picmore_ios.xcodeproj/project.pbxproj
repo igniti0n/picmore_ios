@@ -11,6 +11,10 @@
 		1B297311289DBF62007CADA7 /* list_item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297310289DBF62007CADA7 /* list_item.swift */; };
 		1B297313289DC1C6007CADA7 /* image_details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297312289DC1C6007CADA7 /* image_details.swift */; };
 		1B297315289DC1D3007CADA7 /* images_loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297314289DC1D3007CADA7 /* images_loader.swift */; };
+		1B297317289EA9AE007CADA7 /* expensive_fibonacci_counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297316289EA9AE007CADA7 /* expensive_fibonacci_counter.swift */; };
+		1B297319289EAE5C007CADA7 /* image_details_view_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297318289EAE5C007CADA7 /* image_details_view_model.swift */; };
+		1B29731D289ED10E007CADA7 /* list_item_footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29731C289ED10E007CADA7 /* list_item_footer.swift */; };
+		1B29731F289ED128007CADA7 /* image_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29731E289ED128007CADA7 /* image_view.swift */; };
 		A3FEE999824A5A48FBDC2C25 /* Pods_picmore_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF579FBA7DEF7D75BDB10E5 /* Pods_picmore_ios.framework */; };
 		A5CB90E62896CF3600868D29 /* picmore_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB90E52896CF3600868D29 /* picmore_iosApp.swift */; };
 		A5CB90EA2896CF3800868D29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CB90E92896CF3800868D29 /* Assets.xcassets */; };
@@ -30,6 +34,10 @@
 		1B297310289DBF62007CADA7 /* list_item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = list_item.swift; sourceTree = "<group>"; };
 		1B297312289DC1C6007CADA7 /* image_details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_details.swift; sourceTree = "<group>"; };
 		1B297314289DC1D3007CADA7 /* images_loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = images_loader.swift; sourceTree = "<group>"; };
+		1B297316289EA9AE007CADA7 /* expensive_fibonacci_counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = expensive_fibonacci_counter.swift; sourceTree = "<group>"; };
+		1B297318289EAE5C007CADA7 /* image_details_view_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_details_view_model.swift; sourceTree = "<group>"; };
+		1B29731C289ED10E007CADA7 /* list_item_footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = list_item_footer.swift; sourceTree = "<group>"; };
+		1B29731E289ED128007CADA7 /* image_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_view.swift; sourceTree = "<group>"; };
 		7FF579FBA7DEF7D75BDB10E5 /* Pods_picmore_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_picmore_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB90E22896CF3600868D29 /* picmore_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = picmore_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB90E52896CF3600868D29 /* picmore_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picmore_iosApp.swift; sourceTree = "<group>"; };
@@ -70,8 +78,20 @@
 			isa = PBXGroup;
 			children = (
 				1B297312289DC1C6007CADA7 /* image_details.swift */,
+				1B297318289EAE5C007CADA7 /* image_details_view_model.swift */,
 			);
 			path = image_details;
+			sourceTree = "<group>";
+		};
+		1B297320289ED273007CADA7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				1B297310289DBF62007CADA7 /* list_item.swift */,
+				1B29730E289DB346007CADA7 /* infinite_list.swift */,
+				1B29731C289ED10E007CADA7 /* list_item_footer.swift */,
+				1B29731E289ED128007CADA7 /* image_view.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		A5CB90D92896CF3600868D29 = {
@@ -128,6 +148,7 @@
 			children = (
 				A5CB91032896D8D500868D29 /* images_repository.swift */,
 				A5CB910B289702FF00868D29 /* images_interactor.swift */,
+				1B297316289EA9AE007CADA7 /* expensive_fibonacci_counter.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -154,8 +175,7 @@
 			children = (
 				A5CB90FF2896D7A300868D29 /* images_page.swift */,
 				A5CB91012896D7B100868D29 /* images_view_model.swift */,
-				1B29730E289DB346007CADA7 /* infinite_list.swift */,
-				1B297310289DBF62007CADA7 /* list_item.swift */,
+				1B297320289ED273007CADA7 /* views */,
 				1B297314289DC1D3007CADA7 /* images_loader.swift */,
 			);
 			path = images;
@@ -316,16 +336,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5CB90E62896CF3600868D29 /* picmore_iosApp.swift in Sources */,
+				1B297319289EAE5C007CADA7 /* image_details_view_model.swift in Sources */,
 				A5CB91002896D7A300868D29 /* images_page.swift in Sources */,
 				A5CB910C289702FF00868D29 /* images_interactor.swift in Sources */,
 				A5CB91022896D7B100868D29 /* images_view_model.swift in Sources */,
 				A5CB91042896D8D500868D29 /* images_repository.swift in Sources */,
 				1B29730F289DB346007CADA7 /* infinite_list.swift in Sources */,
 				1B297315289DC1D3007CADA7 /* images_loader.swift in Sources */,
+				1B29731F289ED128007CADA7 /* image_view.swift in Sources */,
 				A5CB910F289703AE00868D29 /* ServiceFactory.swift in Sources */,
 				1B297313289DC1C6007CADA7 /* image_details.swift in Sources */,
 				A5CB90FE2896D58600868D29 /* unsplash_image.swift in Sources */,
 				1B297311289DBF62007CADA7 /* list_item.swift in Sources */,
+				1B297317289EA9AE007CADA7 /* expensive_fibonacci_counter.swift in Sources */,
+				1B29731D289ED10E007CADA7 /* list_item_footer.swift in Sources */,
 				A5CB91072896D91E00868D29 /* images_repository_impl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

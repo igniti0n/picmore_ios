@@ -9,7 +9,15 @@ import Foundation
 import SwiftUI
 
 struct ImagesPage: View {
-    @ObservedObject var viewModel: ListViewModel
+    @ObservedObject var viewModel: ListViewModel = ListViewModel()
+    
+    init() {
+      let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.backgroundColor = #colorLiteral(red: 0, green: 0.337254902, blue: 0.4352941176, alpha: 1)
+      UINavigationBar.appearance().standardAppearance = coloredAppearance
+      UINavigationBar.appearance().compactAppearance = coloredAppearance
+      UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+    }
     
     var body: some View {
         InfiniteList(data: $viewModel.images,
@@ -25,5 +33,6 @@ struct ImagesPage: View {
             }
 
         }
+        
     }
 }

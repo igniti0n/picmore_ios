@@ -12,7 +12,7 @@ class ListViewModel: ObservableObject {
     @Published var images = [UnsplashImage]()
     @Published var isLoading = false
     @Published var isError = false
-    private var page = 1
+    private var page = 0
     private let imagesRepository: ImagesRepository = ImagesRepositoryImpl()
 }
 
