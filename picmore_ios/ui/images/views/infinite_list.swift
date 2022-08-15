@@ -7,25 +7,25 @@
 
 import SwiftUI
 
-public struct InfiniteList<Data, Content, LoadingView>: View
-where Data: RandomAccessCollection, Data.Element: Hashable, Content: View, LoadingView: View  {
+struct InfiniteList<Content, LoadingView>: View
+where Content: View, LoadingView: View  {
     // MARK: - Properties
-    @Binding var data: Data
+    @Binding var data: [UnsplashImage]
     @Binding var isLoading: Bool
     @Binding var isError: Bool
     let loadingView: LoadingView
     let loadMore: () -> Void
-    let content: (Data.Element) -> Content
+    let content: (UnsplashImage) -> Content
     let myColor = Color(#colorLiteral(red: 1, green: 0.7568627451, blue: 0.2, alpha: 1))
     let blueColor = Color(#colorLiteral(red: 0, green: 0.337254902, blue: 0.4352941176, alpha: 1))
 
     // MARK: - Init
-    public init(data: Binding<Data>,
+    init(data: Binding<[UnsplashImage]>,
          isLoading: Binding<Bool>,
                 isError: Binding<Bool>,
          loadingView: LoadingView,
          loadMore: @escaping () -> Void,
-         @ViewBuilder content: @escaping (Data.Element) -> Content) {
+         @ViewBuilder content: @escaping (UnsplashImage) -> Content) {
         _data = data
         _isError = isError
         _isLoading = isLoading
@@ -35,7 +35,7 @@ where Data: RandomAccessCollection, Data.Element: Hashable, Content: View, Loadi
     }
     
     // MARK: - Computed propertes
-    public var body: some View {
+     var body: some View {
             List {
                 listItems
             }
@@ -43,9 +43,9 @@ where Data: RandomAccessCollection, Data.Element: Hashable, Content: View, Loadi
             .listStyle(GroupedListStyle())
     }
     
-    private var listItems: some View {
+    var listItems: some View {
         Group {
-            ForEach(data, id: \.self) { item in
+            ForEach(data, id: \.id) { item in
                 content(item)
                     .listRowBackground(myColor)
                     .onAppear {

@@ -15,6 +15,9 @@
 		1B297319289EAE5C007CADA7 /* image_details_view_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297318289EAE5C007CADA7 /* image_details_view_model.swift */; };
 		1B29731D289ED10E007CADA7 /* list_item_footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29731C289ED10E007CADA7 /* list_item_footer.swift */; };
 		1B29731F289ED128007CADA7 /* image_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29731E289ED128007CADA7 /* image_view.swift */; };
+		1BBB9C0D28AAE41A005C3652 /* image_saver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBB9C0C28AAE419005C3652 /* image_saver.swift */; };
+		1BBB9C0F28AAE433005C3652 /* filtered_image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBB9C0E28AAE433005C3652 /* filtered_image.swift */; };
+		1BBB9C1128AAE72D005C3652 /* toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBB9C1028AAE72D005C3652 /* toast.swift */; };
 		A3FEE999824A5A48FBDC2C25 /* Pods_picmore_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF579FBA7DEF7D75BDB10E5 /* Pods_picmore_ios.framework */; };
 		A5CB90E62896CF3600868D29 /* picmore_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB90E52896CF3600868D29 /* picmore_iosApp.swift */; };
 		A5CB90EA2896CF3800868D29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CB90E92896CF3800868D29 /* Assets.xcassets */; };
@@ -38,6 +41,10 @@
 		1B297318289EAE5C007CADA7 /* image_details_view_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_details_view_model.swift; sourceTree = "<group>"; };
 		1B29731C289ED10E007CADA7 /* list_item_footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = list_item_footer.swift; sourceTree = "<group>"; };
 		1B29731E289ED128007CADA7 /* image_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_view.swift; sourceTree = "<group>"; };
+		1BBB9C0B28AAD9B2005C3652 /* picmore-ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "picmore-ios-Info.plist"; sourceTree = SOURCE_ROOT; };
+		1BBB9C0C28AAE419005C3652 /* image_saver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_saver.swift; sourceTree = "<group>"; };
+		1BBB9C0E28AAE433005C3652 /* filtered_image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filtered_image.swift; sourceTree = "<group>"; };
+		1BBB9C1028AAE72D005C3652 /* toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toast.swift; sourceTree = "<group>"; };
 		7FF579FBA7DEF7D75BDB10E5 /* Pods_picmore_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_picmore_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB90E22896CF3600868D29 /* picmore_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = picmore_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB90E52896CF3600868D29 /* picmore_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picmore_iosApp.swift; sourceTree = "<group>"; };
@@ -79,6 +86,9 @@
 			children = (
 				1B297312289DC1C6007CADA7 /* image_details.swift */,
 				1B297318289EAE5C007CADA7 /* image_details_view_model.swift */,
+				1BBB9C0C28AAE419005C3652 /* image_saver.swift */,
+				1BBB9C0E28AAE433005C3652 /* filtered_image.swift */,
+				1BBB9C1028AAE72D005C3652 /* toast.swift */,
 			);
 			path = image_details;
 			sourceTree = "<group>";
@@ -115,6 +125,8 @@
 		A5CB90E42896CF3600868D29 /* picmore_ios */ = {
 			isa = PBXGroup;
 			children = (
+				1BBB9C0B28AAD9B2005C3652 /* picmore-ios-Info.plist */,
+				A5CB90E52896CF3600868D29 /* picmore_iosApp.swift */,
 				A5CB90F62896D51600868D29 /* app */,
 				A5CB90FB2896D57100868D29 /* common */,
 				A5CB90F52896D50500868D29 /* remote_services */,
@@ -165,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				A5CB910D289703A700868D29 /* di */,
-				A5CB90E52896CF3600868D29 /* picmore_iosApp.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -339,6 +350,7 @@
 				1B297319289EAE5C007CADA7 /* image_details_view_model.swift in Sources */,
 				A5CB91002896D7A300868D29 /* images_page.swift in Sources */,
 				A5CB910C289702FF00868D29 /* images_interactor.swift in Sources */,
+				1BBB9C0F28AAE433005C3652 /* filtered_image.swift in Sources */,
 				A5CB91022896D7B100868D29 /* images_view_model.swift in Sources */,
 				A5CB91042896D8D500868D29 /* images_repository.swift in Sources */,
 				1B29730F289DB346007CADA7 /* infinite_list.swift in Sources */,
@@ -347,10 +359,12 @@
 				A5CB910F289703AE00868D29 /* ServiceFactory.swift in Sources */,
 				1B297313289DC1C6007CADA7 /* image_details.swift in Sources */,
 				A5CB90FE2896D58600868D29 /* unsplash_image.swift in Sources */,
+				1BBB9C0D28AAE41A005C3652 /* image_saver.swift in Sources */,
 				1B297311289DBF62007CADA7 /* list_item.swift in Sources */,
 				1B297317289EA9AE007CADA7 /* expensive_fibonacci_counter.swift in Sources */,
 				1B29731D289ED10E007CADA7 /* list_item_footer.swift in Sources */,
 				A5CB91072896D91E00868D29 /* images_repository_impl.swift in Sources */,
+				1BBB9C1128AAE72D005C3652 /* toast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +499,8 @@
 				DEVELOPMENT_TEAM = 66QU74C344;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "picmore-ios-Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs to use Photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -515,6 +531,8 @@
 				DEVELOPMENT_TEAM = 66QU74C344;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "picmore-ios-Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs to use Photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

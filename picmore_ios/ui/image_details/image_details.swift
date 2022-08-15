@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+import CoreImage
+import CoreImage.CIFilterBuiltins
 
 struct ImageDetails: View {
     let image: UnsplashImage
@@ -15,7 +17,7 @@ struct ImageDetails: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .center) {
-                ImageView.details(with: image.urls.raw)
+                FilteredImage(imageUrl: image.urls.raw, detailsViewModel: viewModel)
                 HStack(alignment: .center) {
                     Image(uiImage: UIImage(named: "heart-sharp")!)
                         .resizable()
@@ -27,14 +29,14 @@ struct ImageDetails: View {
                     ImageView.avatar(with: image.user?.profileImageUrls?.small ?? "")
                     Spacer()
                     Text("\(image.user?.username ?? "n/a")")
-                }.padding()
-                Text("\(image.user?.bio ?? "No bio provided for this user.")")
-                    .padding()
-                Button("Calculate fibonacci") {
-                    viewModel.calculateNumber()
                 }
-                Text("\(viewModel.fibonacciNumber)")
+                .padding()
+                Text("\(image.user?.bio ?? "No bio provided for this user.")")
+                 .padding()
             }
         }
+        .toast(message: "Image saved to gallery!",
+               isShowing: $viewModel.showToast)
     }
+    
 }

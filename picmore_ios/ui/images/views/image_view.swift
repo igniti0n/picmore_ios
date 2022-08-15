@@ -32,10 +32,6 @@ struct ImageView: View {
         ImageView(withURL: url,  height: 400, width: UIScreen.main.bounds.width - 40)
     }
     
-    static func details(with url: String) -> ImageView {
-        ImageView(withURL: url, height: 600, width:  UIScreen.main.bounds.width, cornerRadius: 0)
-    }
-    
     var body: some View {
             Image(uiImage: image)
                 .resizable()

@@ -13,7 +13,7 @@ class ListViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var isError = false
     private var page = 0
-    private let imagesRepository: ImagesRepository = ImagesRepositoryImpl()
+    private let imagesInteractor: ImagesInteractor = ImagesInteractorImpl()
 }
 
 // MARK: - Public methods
@@ -23,7 +23,7 @@ extension ListViewModel {
         isLoading = true
         Task {
             do {
-                let newImages = try await imagesRepository.fetchImages(for: page)
+                let newImages = try await imagesInteractor.fetchImages(for: page)
                 showLoaded(with: newImages)
             } catch(let error) {
                 showError()

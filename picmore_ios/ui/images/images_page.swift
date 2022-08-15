@@ -33,6 +33,5 @@ struct ImagesPage: View {
             }
 
         }
-        
     }
 }
