@@ -9,10 +9,19 @@ import Foundation
 import SwiftUI
 import CoreImage
 import CoreImage.CIFilterBuiltins
+import os.log
 
 struct ImageDetails: View {
     let image: UnsplashImage
     @ObservedObject var viewModel = ImageDetailsViewModel()
+    
+    init(image: UnsplashImage) {
+        self.image = image
+        let log = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "apptim")
+        os_log("{APPTIM_EVENT}: %{public}@", log: log, "navGo, STOP")
+    }
+    
+    
     
     var body: some View {
         ScrollView {

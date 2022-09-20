@@ -7,15 +7,18 @@
 
 import Foundation
 import SwiftUI
+import os.log
 
 struct FilteredImage: View {
     @ObservedObject var imageLoader: ImageLoader
-    @State private var filterIntensity: Float = 1
+    @State private var filterIntensity: Float = 10
     @State private var processedImage: UIImage = UIImage()
     private var currentFilter = CIFilter.colorMatrix()
     private let imageSaver = ImageSaver()
     private let context: CIContext
     private let detailsViewModel: ImageDetailsViewModel
+    private let log = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "apptim")
+
 
     init(imageUrl: String, detailsViewModel: ImageDetailsViewModel) {
         self.imageLoader = ImageLoader(urlString: imageUrl)
@@ -31,13 +34,11 @@ struct FilteredImage: View {
                     .frame(width:  UIScreen.main.bounds.width, height: 600, alignment: .center)
                     .clipped()
                     .cornerRadius(0)
-                Text("Apply filter")
-                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-                Slider(value: $filterIntensity)
-                    .onChange(of: filterIntensity) { _ in
-                        applyProcessing()
-                    }
-                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 10, trailing: 20))
+        
+                Button("Apply filter.") {
+                    applyProcessing()
+                }
+                .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
                 Button("Save image to gallery.") {
                     save()
                 }
@@ -53,14 +54,17 @@ struct FilteredImage: View {
     func loadImage() {
         let beginImage = CIImage(image: processedImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-        applyProcessing()
     }
     
     func applyProcessing() {
         DispatchQueue.global().async {
+            os_log("{APPTIM_EVENT}: %{public}@", log: log, "filterImg, START")
             currentFilter.setValue(CIVector(x: CGFloat(filterIntensity), y: 0, z: 0, w: 0), forKey: "inputRVector")
+            currentFilter.setValue(CIVector(x: 0, y: CGFloat(filterIntensity), z: 0, w: 0), forKey: "inputGVector")
+            currentFilter.setValue(CIVector(x: 0, y: 0, z: CGFloat(filterIntensity), w: 0), forKey: "inputBVector")
             guard let outputImage = currentFilter.outputImage else { return }
             if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
+                os_log("{APPTIM_EVENT}: %{public}@", log: log, "filterImg, STOP")
                 DispatchQueue.main.async {
                     processedImage = UIImage(cgImage: cgimg)
                 }

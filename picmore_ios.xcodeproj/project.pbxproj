@@ -11,10 +11,10 @@
 		1B297311289DBF62007CADA7 /* list_item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297310289DBF62007CADA7 /* list_item.swift */; };
 		1B297313289DC1C6007CADA7 /* image_details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297312289DC1C6007CADA7 /* image_details.swift */; };
 		1B297315289DC1D3007CADA7 /* images_loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297314289DC1D3007CADA7 /* images_loader.swift */; };
-		1B297317289EA9AE007CADA7 /* expensive_fibonacci_counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297316289EA9AE007CADA7 /* expensive_fibonacci_counter.swift */; };
 		1B297319289EAE5C007CADA7 /* image_details_view_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B297318289EAE5C007CADA7 /* image_details_view_model.swift */; };
 		1B29731D289ED10E007CADA7 /* list_item_footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29731C289ED10E007CADA7 /* list_item_footer.swift */; };
 		1B29731F289ED128007CADA7 /* image_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29731E289ED128007CADA7 /* image_view.swift */; };
+		1B2C05B528B8EA9500690F79 /* apptim_events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2C05B428B8EA9500690F79 /* apptim_events.swift */; };
 		1BBB9C0D28AAE41A005C3652 /* image_saver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBB9C0C28AAE419005C3652 /* image_saver.swift */; };
 		1BBB9C0F28AAE433005C3652 /* filtered_image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBB9C0E28AAE433005C3652 /* filtered_image.swift */; };
 		1BBB9C1128AAE72D005C3652 /* toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBB9C1028AAE72D005C3652 /* toast.swift */; };
@@ -37,10 +37,10 @@
 		1B297310289DBF62007CADA7 /* list_item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = list_item.swift; sourceTree = "<group>"; };
 		1B297312289DC1C6007CADA7 /* image_details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_details.swift; sourceTree = "<group>"; };
 		1B297314289DC1D3007CADA7 /* images_loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = images_loader.swift; sourceTree = "<group>"; };
-		1B297316289EA9AE007CADA7 /* expensive_fibonacci_counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = expensive_fibonacci_counter.swift; sourceTree = "<group>"; };
 		1B297318289EAE5C007CADA7 /* image_details_view_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_details_view_model.swift; sourceTree = "<group>"; };
 		1B29731C289ED10E007CADA7 /* list_item_footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = list_item_footer.swift; sourceTree = "<group>"; };
 		1B29731E289ED128007CADA7 /* image_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_view.swift; sourceTree = "<group>"; };
+		1B2C05B428B8EA9500690F79 /* apptim_events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apptim_events.swift; sourceTree = "<group>"; };
 		1BBB9C0B28AAD9B2005C3652 /* picmore-ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "picmore-ios-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1BBB9C0C28AAE419005C3652 /* image_saver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_saver.swift; sourceTree = "<group>"; };
 		1BBB9C0E28AAE433005C3652 /* filtered_image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filtered_image.swift; sourceTree = "<group>"; };
@@ -160,7 +160,6 @@
 			children = (
 				A5CB91032896D8D500868D29 /* images_repository.swift */,
 				A5CB910B289702FF00868D29 /* images_interactor.swift */,
-				1B297316289EA9AE007CADA7 /* expensive_fibonacci_counter.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -196,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				A5CB90FC2896D57600868D29 /* models */,
+				1B2C05B428B8EA9500690F79 /* apptim_events.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -361,8 +361,8 @@
 				A5CB90FE2896D58600868D29 /* unsplash_image.swift in Sources */,
 				1BBB9C0D28AAE41A005C3652 /* image_saver.swift in Sources */,
 				1B297311289DBF62007CADA7 /* list_item.swift in Sources */,
-				1B297317289EA9AE007CADA7 /* expensive_fibonacci_counter.swift in Sources */,
 				1B29731D289ED10E007CADA7 /* list_item_footer.swift in Sources */,
+				1B2C05B528B8EA9500690F79 /* apptim_events.swift in Sources */,
 				A5CB91072896D91E00868D29 /* images_repository_impl.swift in Sources */,
 				1BBB9C1128AAE72D005C3652 /* toast.swift in Sources */,
 			);
@@ -493,7 +493,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"picmore_ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 66QU74C344;
@@ -506,6 +507,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -513,6 +515,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ivan.picmore-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Native ios picmore pp";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -525,7 +528,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"picmore_ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 66QU74C344;
@@ -538,6 +542,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,6 +550,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ivan.picmore-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Distribution Native Picmore PP";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

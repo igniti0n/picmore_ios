@@ -10,9 +10,12 @@ import Alamofire
 
 class ImagesRepositoryImpl: ImagesRepository {
     func fetchImages(for page: Int) async throws -> [UnsplashImage] {
+
         try await withCheckedThrowingContinuation { continuation in
             AF.request("https://api.unsplash.com/photos", method: .get, parameters: ["page" : page], interceptor: ClientTokenInterceptor())
                 .responseDecodable(of: [UnsplashImage].self) { response in
+                    print("Page: \(page)")
+                    print("Response: \(response)")
                     switch response.result {
                     case .success(let images):
                         continuation.resume(with: .success(images))
@@ -35,7 +38,8 @@ class ClientTokenInterceptor: RequestInterceptor {
         if let request = try? encoding.encode(ClientTokenInterceptor.defaultParameters, into: urlRequest) {
             urlRequest = request
         }
-        
+        print("Req: \(urlRequest)")
+
         completion(.success(urlRequest))
     }
 }

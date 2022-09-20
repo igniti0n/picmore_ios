@@ -7,12 +7,15 @@
 
 import Foundation
 import UIKit
+import os.log
 
 class ImageSaver: NSObject {
     var successHandler: (() -> Void)?
     var errorHandler: ((Error) -> Void)?
+    let log = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "apptim")
 
     func writeToPhotoAlbum(image: UIImage) {
+        os_log("{APPTIM_EVENT}: %{public}@", log: log, "saveImage, START")
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveComplete), nil)
     }
 
@@ -20,6 +23,7 @@ class ImageSaver: NSObject {
         if let error = error {
             errorHandler?(error)
         } else {
+            os_log("{APPTIM_EVENT}: %{public}@", log: log, "saveImage, STOP")
             successHandler?()
         }
     }

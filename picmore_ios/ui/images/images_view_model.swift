@@ -12,7 +12,7 @@ class ListViewModel: ObservableObject {
     @Published var images = [UnsplashImage]()
     @Published var isLoading = false
     @Published var isError = false
-    private var page = 0
+    private var page = 1
     private let imagesInteractor: ImagesInteractor = ImagesInteractorImpl()
 }
 
@@ -24,6 +24,7 @@ extension ListViewModel {
         Task {
             do {
                 let newImages = try await imagesInteractor.fetchImages(for: page)
+                print("Fetching page \(page) returned \(newImages)")
                 showLoaded(with: newImages)
             } catch(let error) {
                 showError()

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import os.log
 
 struct ImagesPage: View {
     @ObservedObject var viewModel: ListViewModel = ListViewModel()
@@ -26,11 +27,9 @@ struct ImagesPage: View {
                      loadingView: ProgressView(),
                      loadMore: viewModel.loadMore
         ) { image in
-            NavigationLink {
-                ImageDetails(image: image)
-            } label: {
+          
                 ListItem(image: image)
-            }
+     
 
         }
     }
